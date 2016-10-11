@@ -7,11 +7,15 @@ class MarkdownParser:
         html_lines = []
 
         for item in lines:
-            identifying_char = item[:2]
-            item = item.replace(identifying_char, '')
+            identifying_char = item.strip().split(' ')[0] + ' '
+            item = item.strip().replace(identifying_char, '')
 
             if identifying_char == '# ':
                 item = "<h1>" + item + "</h1>"
+            if identifying_char == '## ':
+                item = "<h2>" + item + "</h2>"
+            if identifying_char == '### ':
+                item = "<h3>" + item + "</h3>"
             if identifying_char == '- ':
                 item = '<li>' + item + '</li>'
 
