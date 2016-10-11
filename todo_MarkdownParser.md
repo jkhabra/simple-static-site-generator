@@ -1,0 +1,12 @@
+- [X] lines := md.split('\n')
+- [X] html_lines := []
+- [X] for each item in lines
+  - [X] identifying_char := item[:2]
+  - [X] item := item.replace(identifying_char, '')
+  - [X] Check the identifying_char
+    - [X] if identifying_char == '# '
+      - [X] item := "<h1>" + item + "</h1>"
+    - [X] if identifying_char == '- '
+      - [X] item := "<li>" + item + "</li>"
+  - [X] html_lines.append(item)
+- [X] "\n".join(html_lines)
